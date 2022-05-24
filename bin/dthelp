@@ -1,0 +1,10 @@
+#! /usr/bin/python
+
+from os import listdir
+
+def list_all_files():
+    for x in listdir():
+        print(x)
+    return
+
+list_all_files()
