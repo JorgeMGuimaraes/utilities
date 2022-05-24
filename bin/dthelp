@@ -1,9 +1,9 @@
 #! /usr/bin/python
 
-from os import listdir
+from os import listdir, path
 
 def list_all_files():
-    for x in listdir():
+    for x in listdir(path.abspath(path.dirname(__file__))):
         print(x)
     return
 
