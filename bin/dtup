@@ -3,7 +3,7 @@
 def print_cheat_sheet():
     print('Info from https://wiki.gentoo.org/wiki/Gentoo_Cheat_Sheet')
     print()
-    print('   Run commands as root')
+    print('   Run commands as root:')
     print('emerge-webrsync')
     print('emerge --sync')
     print('   To see all changes:')
@@ -20,3 +20,5 @@ def print_cheat_sheet():
     print('dispatch-conf')
 
     return
+
+print_cheat_sheet()
