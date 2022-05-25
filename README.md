@@ -11,6 +11,12 @@ Prints a list of all commands.
 
 ### dtup
 
-Prints Gentoo update/upgrade 'cheat sheet'
+Prints Gentoo update/upgrade 'cheat sheet'.
 
     bin/dtup
+
+### dtvm
+
+Initiate libvirt service and start Virt Manager.
+
+    bin/dtvm

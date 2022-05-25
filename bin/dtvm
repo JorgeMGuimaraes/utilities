@@ -1,0 +1,20 @@
+#! /bin/bash
+
+# If Virt Manager can't connect to libvirtd service, follow the instructions found here:
+# https://wiki.gentoo.org/wiki/Virt-manager
+#
+# That is:
+# * Edit /etc/libvirt/libvirtd.conf
+# * Add (or uncomment there) these lines:
+#auth_unix_ro = "none"
+#auth_unix_rw = "none"
+#unix_sock_group = "libvirt"
+#unix_sock_ro_perms = "0777"
+#unix_sock_rw_perms = "0770"
+# * run dtvm again, and should work
+
+# Need doas (or sudo) to start libvirtd
+$service=/etc/init.d/libvirtd
+
+doas $service restart
+virt-manager
