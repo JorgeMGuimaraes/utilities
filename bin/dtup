@@ -9,7 +9,7 @@ def print_cheat_sheet():
     print('emerge --sync')
     print('\n   To see all changes:')
     print('emerge --ask --verbose --update --newuse --deep @world')
-    print('\n   To perform suucint upgrade: ')
+    print('\n   To perform succint upgrade: ')
     print('emerge --quiet --update --newuse --deep @world')
     print('\n   To clean up:')
     print('perl-cleaner --all')
