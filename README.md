@@ -20,3 +20,9 @@ Prints Gentoo update/upgrade 'cheat sheet'.
 Initiate libvirt service and start Virt Manager.
 
     bin/dtvm
+
+### dtprint
+
+Initiate CUPS service and open gtkpl (printer interface).
+
+    bin/dtprint

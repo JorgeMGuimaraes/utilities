@@ -1,0 +1,23 @@
+#! /bin/bash
+
+# Ref.: https://wiki.gentoo.org/wiki/Printing
+#
+# Any user that needs to print should be added to the lp group
+## gpasswd -a username lp
+#
+# In order to be able to add printers and edit them via CUPS's web interface,
+# any system user that is allowed to edit these settings should be in the lpadmin group.
+## gpasswd -a username lpadmin
+
+doas rc-service cupsd restart
+
+# Once the service is started, printers can be added by authenticated users.
+# root is available by default and any member of the lpadmin group. Open up the following URL in a web browser
+#
+# http://localhost:631/ 
+#
+# The default CUPS server configuration located in /etc/cups/cupsd.conf
+#
+# With net-print/gtklp, the installation, modification and configuration of a
+# printer can be performed from a stand-alone GTK application. It uses CUPS and provides all standard CUPS capabilities. 
+gtklp
