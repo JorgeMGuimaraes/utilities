@@ -14,7 +14,10 @@
 # * run dtvm again, and should work
 
 # Need doas (or sudo) to start libvirtd
-$service=/etc/init.d/libvirtd
+# To skip doas password, change doas config file
+# permit my_user cmd /etc/init.d/libvirtd args restart
+service=/etc/init.d/libvirtd
+args=restart
 
-doas $service restart
+doas $service $args
 virt-manager
