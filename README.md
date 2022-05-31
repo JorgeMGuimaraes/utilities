@@ -26,3 +26,9 @@ Initiate libvirt service and start Virt Manager.
 Initiate CUPS service and open gtkpl (printer interface).
 
     bin/dtprint
+
+### dtvol
+
+Shortcut to alsamixer on new window.
+
+    bin/dtvol

@@ -1,0 +1,4 @@
+#! /bin/bash
+
+# Needs st installed
+st alsamixer&
