@@ -1,2 +1,23 @@
-#! /bin/bash
+#! /usr/bin/python
 #description: List (Oh My Zsh)-Git useful shortcuts.
+
+def print_cmds(cmds)-> None:
+    print(f'Oh My Zsh/Git plugin useful aliases ({len(cmds)}):\n')
+    for cmd in cmds:
+        print(cmd)
+    return
+
+cmds = [
+    'ga: git add',
+    'gb: git branch',
+    'gcmsg: git commit -m',
+    'gd: git diff',
+    'ggl: git pull origin $(current_branch)',
+    'ggp: git push origin $(current_branch)',
+    'ggpnp: ggl && ggp (like sync)',
+    'gra: git remote add',
+    'gra: git remote add',
+    'grm: git rm',
+    'gst: git status'
+]
+print_cmds(cmds)
