@@ -1,0 +1,2 @@
+#! /bin/bash
+#description: Enable print services. Print with 'lp file.pdf'

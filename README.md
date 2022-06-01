@@ -23,7 +23,7 @@ Initiate libvirt service and start Virt Manager.
 
 ### dtprint
 
-Initiate CUPS service and open gtkpl (printer interface).
+Initiate CUPS service.
 
     bin/dtprint
 
@@ -32,3 +32,9 @@ Initiate CUPS service and open gtkpl (printer interface).
 Shortcut to alsamixer on new window.
 
     bin/dtvol
+
+### dtgit
+
+List (Oh My Zsh)-Git useful shortcuts.
+
+    bin/dtgit
