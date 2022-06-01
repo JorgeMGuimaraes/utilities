@@ -1,10 +1,23 @@
 #! /usr/bin/python
 
+#description: Print all scripts and programs
+
 from os import listdir, path
 
+def print_description(dirpath:str, filename:str)-> bool :
+    filepath = path.join(dirpath, filename)
+    with open(filepath, 'r') as f:
+        for line in f.readlines():
+            if line.startswith('#description'):
+                print(f'* {filename}{line.strip()[12:]}')
+                return True
+    return False
+
 def list_all_files():
-    for x in listdir(path.abspath(path.dirname(__file__))):
-        print(x)
+    dirpath:str = path.abspath(path.dirname(__file__))
+    for x in listdir(dirpath):
+        if not print_description(dirpath, x):
+            print(f'* {x}')
     return
 
 list_all_files()
