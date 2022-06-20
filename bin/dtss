@@ -1,0 +1,9 @@
+#! /bin/bash
+#description: Takes a screenshot and saves it to a directory.
+
+directory="$HOME/documents/screenshots"
+date_string="%Y%m%d_%H%M%S%N_screenshot.png"
+
+scrot \
+    --select \
+    $directory/$(date +$date_string)

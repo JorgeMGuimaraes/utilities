@@ -38,3 +38,9 @@ Shortcut to alsamixer on new window.
 List (Oh My Zsh)-Git useful shortcuts.
 
     bin/dtgit
+
+### dtss
+
+Takes a screenshot and saves it to a directory.
+
+    bin/dtss
