@@ -44,3 +44,9 @@ List (Oh My Zsh)-Git useful shortcuts.
 Takes a screenshot and saves it to a directory.
 
     bin/dtss
+
+### dtdd
+
+Safer attempt to dd command, asking before acting
+
+    bin/dtdd

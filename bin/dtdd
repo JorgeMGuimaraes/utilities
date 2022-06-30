@@ -1,0 +1,2 @@
+#! /usr/bin/python
+#description: Safer attempt to dd command, asking before acting
