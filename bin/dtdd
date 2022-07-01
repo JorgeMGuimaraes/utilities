@@ -1,2 +1,46 @@
 #! /usr/bin/python
 #description: Safer attempt to dd command, asking before acting
+
+# Startegy
+
+# keep a list of 'protected' devices, and if it is listed as 'of=' print a warning
+# and suggest try command manually.
+
+from typing import List
+from os import system
+
+protected_devices = [
+    '/dev/sda',
+    '/dev/sdb'
+]
+
+def devices_protected(devices:List[str]) -> bool:
+    for i in range(len(devices)):
+        while devices[i][-1].isdecimal():
+            devices[i] = devices[i][:-1]
+
+    for d in devices:
+        if d in protected_devices:
+            return True
+    return False
+
+def dd_command(if_file: str, of_file: str) -> str:
+    return f'dd if={if_file} of={of_file} bs=4M status=progress'
+
+def run_dd():
+    print('Protected devices:')
+    for d in protected_devices:
+        print(f'\t{d}')
+
+    devices = []
+    devices.append(input('Enter if path (/home/user/file1.img): '))
+    devices.append(input('Enter of path (/dev/sdc): '))
+    if devices_protected(devices):
+        print('One or more device selected is protected. Please check values or run command manually.')
+        return
+    
+    system(dd_command(if_file=devices[0], of_file=[1]))
+    return
+
+# Program
+run_dd()
