@@ -1,6 +1,23 @@
 # Utilities
 Linux unitilies, scripts, start serviices, etc.
 
+## Setup
+
+    # clone project to desktop
+    cd $HOME
+    remote=git@github.com:JorgeMGuimaraes/utilities.git
+    git clone $remote
+
+    # make a link to .bin folder
+    ln -s utilities/bin $HOME
+
+    # export new path to $PATH
+    # bash
+    cp .bashrc .bashrc.old
+    echo "export PATH=\$PATH:\$HOME/bin" >> .bashrc
+    source .bashrc
+    exit
+
 ## Desktop Utilities
 
 ### dthelp
@@ -50,3 +67,7 @@ Takes a screenshot and saves it to a directory.
 Safer attempt to dd command, asking before acting
 
     bin/dtdd
+
+## TODO
+
+- [] Change python shebangs to #!/usr/bin/env python3
