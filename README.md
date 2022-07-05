@@ -68,6 +68,14 @@ Safer attempt to dd command, asking before acting
 
     bin/dtdd
 
+## Scripts
+
+### ssh_keygen.sh
+
+Generates a new key based on some standards
+
+    scripts/ssh_keygen.sh
+
 ## TODO
 
 - [] Change python shebangs to #!/usr/bin/env python3
