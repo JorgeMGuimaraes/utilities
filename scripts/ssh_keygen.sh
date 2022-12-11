@@ -21,7 +21,7 @@ ssh-keygen \
   -o \
   -a 256 \
   -t ed25519 \
-  -C "$(hostname)"
+  -C "$(whoami)@$(hostname)"
 
 echo "\nMake the .ssh directory unreadable for other users and groups..."
 chmod $OWNER_RWE $SSH_DIR_S
