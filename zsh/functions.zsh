@@ -46,3 +46,10 @@ ubuntu-umount () {
 
     doas umount $MOUNT_POINT
 }
+
+vm-dump () {
+    doas virsh list --all
+    vared -p 'Enter Virtual Machine Name: ' -c DOMAIN
+    vared -p 'Enter target directory: ' -c DIR
+    doas virsh dumpxml --domain $DOMAIN > $DIR/$DOMAIN.xml
+}
