@@ -14,12 +14,6 @@ uuid () {
 }
 
 ## Batocera
-batocera-mount () {
-    MOUNT_POINT=/media/batocera
-    UUID="fe7f3a6f-80c1-4dd7-818e-a591e38beb6f"
-
-    doas mount UUID=$UUID $MOUNT_POINT
-}
 
 batocera-umount () {
     MOUNT_POINT=/media/batocera
@@ -27,10 +21,33 @@ batocera-umount () {
     doas umount $MOUNT_POINT
 }
 
-batocera-copy () {
-    TARGER_DIR=/media/batocera/temp
+# If device is available, mount it. Otherwise, print error message and exit.
+__batocera-mount-check () {
+    if doas mount UUID=$1 $2; then
+        echo "Batocera device mounted."
+    else
+        echo "Batocera device not found. Exiting..."
+        exit 1
+    fi
+}
 
-    doas cp -R $1 $TARGER_DIR
+batocera-mount () {
+    MOUNT_POINT=/media/batocera
+    UUID="fe7f3a6f-80c1-4dd7-818e-a591e38beb6f"
+
+    __batocera-mount-check $UUID $MOUNT_POINT
+}
+
+batocera-copy () {
+    MOUNT_POINT=/media/batocera
+    UUID="fe7f3a6f-80c1-4dd7-818e-a591e38beb6f"
+    TARGET_DIR=/media/batocera/temp
+    SOURCE_DIR=/data/games/to_batocera
+    echo "Mounting Batocera device..."
+    __batocera-mount-check $UUID $MOUNT_POINT
+    echo "Copying files to $TARGET_DIR ..."
+    doas cp -R $SOURCE_DIR/* $TARGET_DIR/
+    doas umount $MOUNT_POINT
 }
 
 ## Ubuntu
